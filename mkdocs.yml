@@ -3,7 +3,7 @@ theme: material
 # theme_dir: custom_theme_files
 edit_uri: blob/master/docs/
 repo_name: 'GitHub'
-repo_url: 'https://github.com/bitrise-io/devcenter'
+repo_url: 'https://github.com/dbreuer/devcenter'
 
 pages:
 - "Bitrise DevCenter - What is Bitrise?": index.md
