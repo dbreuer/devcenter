@@ -3,8 +3,6 @@ python:
 - '2.7'
 node_js:
 - "8.9.4"
-env:
-  - secure:
 install:
   - npm install
   - sudo pip install -r requirements.txt
