@@ -36,4 +36,4 @@ To add a new endpoint documentation section:
 - use that in the _example response_ section of the endpoint (`{{ (var "/URL-PATH").HTTPMETHOD }}`)
 - and finally, run: `bitrise run generate-api-docs` to generate the `.md` from the `.md.gg`
 
-- test Travis CI
+- test Travis CI modified
