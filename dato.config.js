@@ -33,6 +33,9 @@ module.exports = (dato, root, i18n) => {
   const homePage = {};
   homePage[dato.homePage.title] = 'index.md';
   pageMaps.push(homePage);
+  root.createDataFile('docs/index.md', 'yaml', {
+    content: homePage.content
+  })
 
   dato.pages.map(article => {
     const articleObject = {};

@@ -112,4 +112,5 @@ extra:
   font:
     text: Roboto
     code: Source Code Pro
-extra_css: stylesheets/extra.css
+extra_css:
+  - stylesheets/extra.css
