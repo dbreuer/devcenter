@@ -1,0 +1,17 @@
+language: python
+python:
+- '2.7'
+node_js:
+  - "8.9.4"
+install:
+  - npm install
+  - sudo pip3 install -r requirements.txt
+script:
+  - ./node_modules/.bin/dato dump
+  - mkdocs build
+after_success:
+- pip install mkdocs -U;
+- mkdocs gh-deploy -v
+notifications:
+  webhooks:
+  - https://webhooks.datocms.com/d3f26f66eb45b610786d/deploy-results
