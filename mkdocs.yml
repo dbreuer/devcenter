@@ -1,0 +1,115 @@
+site_name: Bitrise DevCenter
+theme: material
+edit_uri: blob/master/docs/
+repo_name: GitHub
+repo_url: 'https://github.com/dbreuer/devcenter'
+pages:
+  - Bitrise DevCenter - What is Bitrise?: index.md
+  - Connecting a repository: index.md
+  - Setting up configuration: index.md
+  - Setting up SSH keys: index.md
+  - Android tips and tricks: index.md
+  - Android Code Signing: index.md
+  - Frequent Android issues: index.md
+  - The Android/Linux/Docker environment: index.md
+  - App Status / Badge API: index.md
+  - Build Trigger API: index.md
+  - Outgoing Webhooks: index.md
+  - Basics of bitrise.yml: index.md
+  - Create your own Step: index.md
+  - Install the Bitrise CLI: index.md
+  - Most important concepts: index.md
+  - Run your first build: index.md
+  - Secrets: index.md
+  - Steps: index.md
+  - Workflows: index.md
+  - About caching: index.md
+  - Caching Cocoapods: index.md
+  - Caching Gradle: index.md
+  - Caching Maven: index.md
+  - Caching Ruby GEMs: index.md
+  - How to run your build locally in Docker: index.md
+  - Use your own Docker image: index.md
+  - Adding projects with submodules or with private CocoaPods repos: index.md
+  - Android x86 Emulator: index.md
+  - Available Environment Variables: index.md
+  - GitHub Pull Request / build Status indicator troubleshooting: index.md
+  - Grant access to a GitHub Organization: index.md
+  - How to change the owner of an app: index.md
+  - How to generate an SSH key pair: index.md
+  - I can't see my GitHub organization / repository on the Add New App page: index.md
+  - No builds are triggered when I push code into the repository: index.md
+  - Organization FAQ: index.md
+  - Should I commit my dependencies into my repository?: index.md
+  - Why my build takes longer on Bitrise than on my Mac?: index.md
+  - fastlane tools integration: index.md
+  - How to configure fastlane match for Bitrise: index.md
+  - Add your first Step to your Workflow: index.md
+  - Create your first App on Bitrise.io: index.md
+  - Manage your Bitrise workflow: index.md
+  - Available Stacks: index.md
+  - Virtual Machines: index.md
+  - iOS Code Signing - Technical details: index.md
+  - How to export Certificates and Provisioning Profiles: index.md
+  - Frequent iOS issues: index.md
+  - List of known Xcode issues: index.md
+  - Resigning an IPA: index.md
+  - Uploading certificates: index.md
+  - Signing up with Bitbucket: index.md
+  - Signing up with email: index.md
+  - Signing up with GitHub: index.md
+  - Trial after signing up: index.md
+  - Changing the owner of an app: index.md
+  - Creating organizations: index.md
+  - Managing billing and subscription for organizations: index.md
+  - Managing the invoices of your organizations: index.md
+  - Finding the URL of your organizations: index.md
+  - Attach any file as an Artifact to the Build: index.md
+  - 'Enable/Disable a step (optionally, based on a condition)': index.md
+  - Don't mark the Build as failed if a given step would fail (ignore the error of the Step): index.md
+  - Expose an Environment Variable and use it in another Step: index.md
+  - Install Any Additional Tool: index.md
+  - Optimize your build times: index.md
+  - Skip a Build (skip ci): index.md
+  - Use bitrise.yml from repository: index.md
+  - 'Xcode Archive: export options': index.md
+  - Bitrise Tools: index.md
+  - Workflow Editor doesn't load: index.md
+  - Auto deploy your Middleman blog / static website: index.md
+  - 'Build with FAKE (F# Make)': index.md
+  - Community Created Tutorials: index.md
+  - Bitrise OTA App Deployment: index.md
+  - Deploy to TestFairy with Bitrise: index.md
+  - Publish your app to Appaloosa: index.md
+  - Download or replace project resources: index.md
+  - Efficient Continuous Integration and Deployment Workflow for iOS development: index.md
+  - HipChat message with build status and details: index.md
+  - How to use the Generic File Storage: index.md
+  - Configure and connect to your VPN: index.md
+  - Adding a Bitbucket webhook: index.md
+  - Adding a GitHub webhook: index.md
+  - 'Control what to build when, with the Trigger Map': index.md
+  - Webhook Troubleshooting: index.md
+  - Add custom sources to NuGet: index.md
+  - Add UITest to your Xamarin app: index.md
+  - Connect your Xamarin account to Bitrise: index.md
+  - Deploy your Xamarin app: index.md
+  - Restore NuGet packages and Xamarin Components: index.md
+  - Run your tests in the Xamarin Test Cloud: index.md
+  - Getting started: index.md
+  - Some new content new version: index.md
+markdown_extensions:
+  - codehilite(css_class=code)
+  - admonition
+  - toc:
+      permalink: ⚓
+extra:
+  palette:
+    primary: deep purple
+    accent: deep purple
+    extra: null
+  logo: img/logo.svg
+  font:
+    text: Roboto
+    code: Source Code Pro
+extra_css: stylesheets/extra.css
