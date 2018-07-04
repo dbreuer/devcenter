@@ -24,7 +24,7 @@ const defaultAppConfig = {
       code: 'Source Code Pro'
     }
   },
-  extra_css: 'stylesheets/extra.css'
+  extra_css: ['stylesheets/extra.css']
 };
 
 module.exports = (dato, root, i18n) => {
