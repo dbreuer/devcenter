@@ -10,8 +10,10 @@ script:
   - ./node_modules/.bin/dato dump
   - mkdocs build
 after_success:
-- pip install mkdocs -U;
-- mkdocs gh-deploy -v
+  - git config --global user.email "dbreuer83@gmail.com"
+  - git config --global user.name "David Breuer"
+  - pip install mkdocs -U;
+  - mkdocs gh-deploy -v
 notifications:
   webhooks:
   - https://webhooks.datocms.com/d3f26f66eb45b610786d/deploy-results
