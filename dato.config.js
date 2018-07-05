@@ -49,38 +49,17 @@ const defaultAppConfig = {
 };
 
 module.exports = (dato, root, i18n) => {
-  console.log('\r\n');
+  console.log('\r\n')
   const pageMaps = [];
   const homePage = {};
   homePage[dato.homePage.title] = 'index.md';
   pageMaps.push(homePage);
-  root.createDataFile('docs/index.md', 'yaml', {
-    content: homePage.content
-  })
+
 
   dato.pages.map(article => {
     const articleObject = {};
-
     if (article.parent === null) {
       articleObject[article.title] = [];
-    }
-    if (article.parent === null && article.content !== null) {
-      articleObject[article.title] = 'index.md';
-    }
-    if (article.parent !== null && article.parent.parent === null) {
-      articleObject[article.title] =
-        article.content !== null
-          ? [String(article.parent.slug), String(article.slug)].join('/') +
-            '.md'
-          : [];
-      pageMaps.map(item => {
-        if (
-          item[Object.keys(item)].indexOf('.md') === -1 &&
-          Object.keys(item)[0] === article.parent.title
-        ) {
-          item[Object.keys(item)].push(articleObject);
-        }
-      });
     }
     if (article.parent !== null && article.parent.parent !== null) {
       articleObject[article.title] =
@@ -99,6 +78,29 @@ module.exports = (dato, root, i18n) => {
         }
       });
     }
+    if (article.parent !== null && article.parent.parent === null) {
+
+      articleObject[article.title] =
+        article.content !== null
+          ? [String(article.parent.slug), String(article.slug)].join('/') +
+            '.md'
+          : [];
+      pageMaps.map(item => {
+        if (
+          item[Object.keys(item)].indexOf('.md') === -1 &&
+          Object.keys(item)[0] === article.parent.title
+        ) {
+          item[Object.keys(item)].push(articleObject);
+        }
+      });
+    }
+
+    if (article.parent === null && article.content !== null) {
+      articleObject[article.title] = article.slug + '/index.md';
+    }
+
+
+
     if (!isEmpty(articleObject) && article.parent === null) {
       pageMaps.push(articleObject);
     }
@@ -140,9 +142,17 @@ module.exports = (dato, root, i18n) => {
       }
     });
   });
-};
+
+  root.createDataFile('docs/index.md', 'yaml', {
+    content: dato.homePage.content
+  });
+  console.log(dato.homePage.content)
+}
 
 var isEmpty = function(obj) {
   for (var key in obj) if (obj.hasOwnProperty(key)) return false;
   return true;
-};
+}
+
+
+
