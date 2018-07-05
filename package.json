@@ -1,6 +1,7 @@
 {
   "scripts": {
     "dato": "./node_modules/.bin/dato dump",
+    "postdato": "cp -R ./public/* ./docs",
     "importdocs": "ts-node dato.import.ts"
   },
   "dependencies": {
