@@ -2,7 +2,6 @@
 
 const defaultAppConfig = {
   site_name: 'Bitrise DevCenter',
-  theme: 'material',
   edit_uri: 'blob/master/docs/',
   repo_name: 'GitHub',
   repo_url: 'https://github.com/dbreuer/devcenter',
@@ -12,7 +11,17 @@ const defaultAppConfig = {
     'admonition',
     { toc: { permalink: '⚓' } }
   ],
-  extra: {
+  copyright: 'Copyright &copy; 2014 - 2018 Bitrise Ltd.',
+  theme: {
+    name: null,
+    custom_dir: 'mkdocs-material/material',
+    language: 'en',
+    static_templates: [
+      '404.html'
+    ],
+    feature: {
+      tabs: false
+    },
     palette: {
       primary: 'deep purple',
       accent: 'deep purple',
@@ -24,7 +33,19 @@ const defaultAppConfig = {
       code: 'Source Code Pro'
     }
   },
-  extra_css: ['stylesheets/extra.css']
+  extra_css: ['stylesheets/extra.css', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css'],
+  extra_javascript: [
+    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-go.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-graphql.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-bash.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-javascript.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-markdown.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-python.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-ruby.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js'
+  ]
 };
 
 module.exports = (dato, root, i18n) => {
