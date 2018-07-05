@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "predato": "./node_modules/.bin/dato dump",
     "dato": "./node_modules/.bin/dato dump",
     "postdato": "cp -R ./public/* ./docs",
     "importdocs": "ts-node dato.import.ts"

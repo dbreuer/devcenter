@@ -7,7 +7,7 @@ install:
   - npm install
   - sudo pip install -r requirements.txt
 script:
-  - ./node_modules/.bin/dato dump
+  - npm run dato
   - mkdocs build
   - git config --global user.email "dbreuer83@gmail.com"
   - git config --global user.name "David Breuer"
