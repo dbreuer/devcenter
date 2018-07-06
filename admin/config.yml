@@ -3,13 +3,26 @@ backend:
   repo: dbreuer/devcenter # Path to your Github repository
   branch: master
 
-media_folder: "img/uploads" # Folder where user uploaded files should go
+public_folder: "site"
+media_folder: "site/assets"
+publish_mode: editorial_workflow
 
-collections: # A list of collections the CMS should be able to edit
-  - name: "pages" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Pages" # Used in the UI, ie.: "New Post"
-    extension: markdown
-    folder: "{{slug}}/index.md" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
+collections:
+  - name: "doc"
+    label: "Doc"
+    folder: "docs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Publish Date", name: "date", widget: "string"}
+  - name: "extensions"
+    label: "Extensions"
+    folder: "docs/extensions"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Publish Date", name: "date", widget: "string"}
