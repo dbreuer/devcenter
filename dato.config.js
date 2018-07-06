@@ -7,18 +7,55 @@ const defaultAppConfig = {
   repo_url: 'https://github.com/dbreuer/devcenter',
   pages: [],
   markdown_extensions: [
-    'codehilite(css_class=code)',
+    'markdown.extensions.admonition',
+    {
+      'markdown.extensions.codehilite': {
+        css_class: 'code',
+        use_pygments: false,
+        guess_lang: false
+      }
+    },
+    'pymdownx.arithmatex',
+    {
+      'pymdownx.betterem': {
+        smart_enable: 'all'
+      }
+    },
+    'pymdownx.caret',
+    'pymdownx.critic',
+    'pymdownx.details',
+    {
+      'pymdownx.emoji': {
+        emoji_generator: '!!python/name:pymdownx.emoji.to_svg'
+      }
+    },
+    'pymdownx.inlinehilite',
+    'pymdownx.magiclink',
+    'pymdownx.mark',
+    'pymdownx.smartsymbols',
+    'pymdownx.superfences',
+    {
+      'pymdownx.tasklist': {
+        custom_checkbox: true
+      }
+    },
+    'pymdownx.tilde',
+    {
+      'codehilite': {
+        linenums: true
+      }
+    },
     'admonition',
-    { toc: { permalink: '⚓' } }
+    {
+      toc: { permalink: '⚓' }
+    }
   ],
   copyright: 'Copyright &copy; 2014 - 2018 Bitrise Ltd.',
   theme: {
     name: null,
     custom_dir: 'mkdocs-material/material',
     language: 'en',
-    static_templates: [
-      '404.html'
-    ],
+    static_templates: ['404.html'],
     feature: {
       tabs: false
     },
@@ -33,7 +70,10 @@ const defaultAppConfig = {
       code: 'Source Code Pro'
     }
   },
-  extra_css: ['stylesheets/extra.css', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css'],
+  extra_css: [
+    'stylesheets/extra.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css'
+  ],
   extra_javascript: [
     'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js',
     'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-go.min.js',
@@ -49,12 +89,11 @@ const defaultAppConfig = {
 };
 
 module.exports = (dato, root, i18n) => {
-  console.log('\r\n')
+  console.log('\r\n');
   const pageMaps = [];
   const homePage = {};
   homePage[dato.homePage.title] = 'index.md';
   pageMaps.push(homePage);
-
 
   dato.pages.map(article => {
     const articleObject = {};
@@ -79,7 +118,6 @@ module.exports = (dato, root, i18n) => {
       });
     }
     if (article.parent !== null && article.parent.parent === null) {
-
       articleObject[article.title] =
         article.content !== null
           ? [String(article.parent.slug), String(article.slug)].join('/') +
@@ -99,8 +137,6 @@ module.exports = (dato, root, i18n) => {
       articleObject[article.title] = article.slug + '/index.md';
     }
 
-
-
     if (!isEmpty(articleObject) && article.parent === null) {
       pageMaps.push(articleObject);
     }
@@ -119,7 +155,11 @@ module.exports = (dato, root, i18n) => {
         });
       }
 
-      if (article.parent !== null && article.parent.parent === null && article.content !== null) {
+      if (
+        article.parent !== null &&
+        article.parent.parent === null &&
+        article.content !== null
+      ) {
         articlesDir.createPost(
           `${article.parent.slug}/${article.slug}.md`,
           'yaml',
@@ -129,7 +169,11 @@ module.exports = (dato, root, i18n) => {
         );
       }
 
-      if (article.parent !== null && article.parent.parent !== null && article.content !== null) {
+      if (
+        article.parent !== null &&
+        article.parent.parent !== null &&
+        article.content !== null
+      ) {
         articlesDir.createPost(
           `${article.parent.parent.slug}/${article.parent.slug}/${
             article.slug
@@ -146,13 +190,10 @@ module.exports = (dato, root, i18n) => {
   root.createDataFile('docs/index.md', 'yaml', {
     content: dato.homePage.content
   });
-  console.log(dato.homePage.content)
-}
+  console.log(dato.homePage.content);
+};
 
 var isEmpty = function(obj) {
   for (var key in obj) if (obj.hasOwnProperty(key)) return false;
   return true;
-}
-
-
-
+};
