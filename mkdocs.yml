@@ -59,7 +59,7 @@ pages:
   - Signing up with GitHub: signing-up-with-github/index.md
   - Trial after signing up: trial-after-signing-up/index.md
   - Changing the owner of an app: changing-the-owner-of-an-app/index.md
-  - Creating organizations: creating-org/index.md
+  # - Creating organizations: creating-org/index.md
   - Managing billing and subscription for organizations: managing-billing-sub/index.md
   - Managing the invoices of your organizations: managing-invoices/index.md
   - Finding the URL of your organizations: org-url/index.md
@@ -80,15 +80,15 @@ pages:
   - Bitrise OTA App Deployment: bitrise-app-deployment/index.md
   - Deploy to TestFairy with Bitrise: deploy-to-testfairy-with-bitrise/index.md
   - Publish your app to Appaloosa: publish-your-app-to-appaloosa/index.md
-  - Download or replace project resources: download-or-replace-project-resources/index.md
-  - Efficient Continuous Integration and Deployment Workflow for iOS development: efficient-continuous-integration-and-deployment-workflow-for-ios/index.md
-  - HipChat message with build status and details: hipchat-message/index.md
-  - Adding a Bitbucket webhook: adding-a-bitbucket-webhook/index.md
-  - Add UITest to your Xamarin app: add-unit-test-to-your-xamarin-app/index.md
-  - Deploy your Xamarin app: deploy-your-xamarin-app/index.md
-  - Run your tests in the Xamarin Test Cloud 2: run-your-tests-in-the-xamarin-test-cloud/index.md
-  - Getting started: getting-started/index.md
-  - Some new content new version: some-new-content/index.md
+  # - Download or replace project resources: download-or-replace-project-resources/index.md
+  # - Efficient Continuous Integration and Deployment Workflow for iOS development: efficient-continuous-integration-and-deployment-workflow-for-ios/index.md
+  # - HipChat message with build status and details: hipchat-message/index.md
+  # - Adding a Bitbucket webhook: adding-a-bitbucket-webhook/index.md
+  # - Add UITest to your Xamarin app: add-unit-test-to-your-xamarin-app/index.md
+  # - Deploy your Xamarin app: deploy-your-xamarin-app/index.md
+  # - Run your tests in the Xamarin Test Cloud 2: run-your-tests-in-the-xamarin-test-cloud/index.md
+  # - Getting started: getting-started/index.md
+  # - Some new content new version: some-new-content/index.md
 markdown_extensions:
   - codehilite(css_class=code)
   - admonition
