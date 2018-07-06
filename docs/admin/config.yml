@@ -1,6 +1,7 @@
 backend:
   name: github
   repo: dbreuer/devcenter # Path to your Github repository
+  branch: master
 
 media_folder: "img/uploads" # Folder where user uploaded files should go
 
